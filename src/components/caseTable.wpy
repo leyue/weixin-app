@@ -1,0 +1,369 @@
+<template>
+  <div>
+    <div class="chooseLine">
+      <radio-group class="radio-group" v-model="autoType">
+        <label class="radio" wx:for="{{items}}"  wx:key="{{items.value}}">
+          <radio value="{{item.value}}" checked="{{item.checked}}" color="#4770f7" />
+          {{item.name}}
+        </label>
+      </radio-group>
+    </div>
+    <div v-for="(moduleValue, moduleKey) in autoTree" :label="moduleKey" :key="moduleKey">
+      <div v-for="(categoryValue, categoryKey) in moduleValue" :key="categoryKey">
+        <div slot="header">
+          <span>{{ categoryKey }}</span>
+        </div>
+        <div v-for="(caseValue, index) of categoryValue.caseList" :key="index" class="caseCard">
+          <div>
+            <div class="topLine">
+              <span class="info_name">{{ caseValue.alias }}</span>
+              <div class="case-operate">
+                <span v-if="caseValue.status1.doName === 'passed'">Pass</span>
+                <span v-if="caseValue.status1.doName === 'failed'">Fail</span>
+                <span
+                  v-if="(caseValue.status1.doName === 'passed' || caseValue.status1.doName === 'failed') && caseValue.status1.doName === 'NA'"
+                >待确认</span>
+              </div>
+            </div>
+            <div class="info_py">{{caseValue.name}}</div>
+            <div v-if="caseValue.status1.assigned !== ''">{{ caseValue.status1.assigned }}</div>
+            <div class="bottomLine">
+              <!-- 将进度条  和error信息直接显示-->
+              <progress class="progress" v-if="caseValue.status1.name === 'passed'" percent="100"></progress>
+              <div class="error" v-else>{{ caseValue.status1.error}}</div>
+              <button
+                v-show="caseValue.log && caseValue.log.upload"
+                class="download"
+                @click="handleDownloadLog(caseValue, true)"
+              >下载Log</button>
+            </div>
+            <!-- <div v-if="!Sanity && (caseValue.owner === user || roles.developer)"
+                         class="case-operate">
+                      <el-button
+                        v-if="(caseValue.status1.name === 'passed' || caseValue.status1.name === 'failed') && caseValue.status1.doName === 'NA'"
+                        size="small"
+                        type="success"
+                        @click="handleConfirmPass(caseValue)">Pass
+                      </el-button>
+                      <el-button
+                        v-if="(caseValue.status1.name === 'passed' || caseValue.status1.name === 'failed') && caseValue.status1.doName === 'NA'"
+                        size="small"
+                        type="danger"
+                        @click="handleConfirmFail(caseValue)">Fail
+                      </el-button>
+                      <el-button
+                        v-if="(app.status.name !== 'passed' && app.status.name !== 'failed' && app.status.name !== 'canceled') && (caseValue.status1.name === 'failed')"
+                        size="small"
+                        type="warning"
+                        @click="handleSetBugs(caseValue)">BUG
+                      </el-button>
+            </div>-->
+          </div>
+          <div>
+            <!-- <el-table v-if="caseValue.status1.bugs.length !== 0"
+                              :data="caseValue.status1.bugs"
+                              :show-header="false">
+                      <el-table-column width="150">
+                        <template scope="scope">
+                          <a :href="'http://bugzilla.spreadtrum.com/bugzilla/show_bug.cgi?id=' + scope.row"
+                             target="_blank">{{ scope.row }}</a>
+                        </template>
+                      </el-table-column>
+
+                      <el-table-column>
+                        <template scope="scope">
+                          <a :href="'http://bugzilla.spreadtrum.com/bugzilla/show_bug.cgi?id=' + scope.row"
+                             target="_blank">{{ bugs[scope.row] || '' }}</a>
+                        </template>
+                      </el-table-column>
+            </el-table>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core';
+
+wepy.component({
+  data: {
+    autoType: 0,
+    manualType: 0,
+    regex: /^case_.+_([^.]+).py$/i,
+    items: [
+      { name: '所有项', value: 0,checked: true},
+      { name: '待确认', value: 1 },
+      { name: '失败项', value: 2 }
+    ]
+  },
+  props: {
+    cases: {},
+    app: String,
+    _id: String
+  },
+  methods: {
+    radioChange: function() {
+      console.log('changed' + this.items.checked.value);
+    },
+    log() {
+      console.log(autoTree);
+    },
+    handleDownloadLog(caseValue, online) {
+      let path = `http://nats-sh.unisoc.com:30001/nginx/download/logs/test/${
+        this.app
+      }_${this._id}/${online ? 'online' : 'offline'}${caseValue.log.httpUri}`;
+      let me = this.app;
+      wx.downloadFile({
+        url: path,
+        success(res) {
+          console.log('下载log成功');
+          console.log(res);
+        }
+      });
+    }
+  },
+
+  computed: {
+    autoAllTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.online) {
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category].caseList.push(item);
+      }
+      return tree;
+    },
+    autoToConfirmTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.online) {
+        let name = item.status1.name;
+        let doName = item.status1.doName;
+        if (!(name === 'failed' && doName === 'NA')) {
+          continue;
+        }
+
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category].caseList.push(item);
+      }
+
+      return tree;
+    },
+    autoFailTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.online) {
+        let doName = item.status1.doName;
+        if (doName !== 'failed') {
+          continue;
+        }
+
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category].caseList.push(item);
+      }
+      return tree;
+    },
+    manualAllTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.offline) {
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {};
+        }
+
+        if (tree[item.module][item.category][item.caseSet] === undefined) {
+          tree[item.module][item.category][item.caseSet] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category][item.caseSet].caseList.push(item);
+      }
+
+      return tree;
+    },
+    manualToConfirmTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.offline) {
+        let name = item.status1.name;
+        let doName = item.status1.doName;
+        if (!(name === 'failed' && doName === 'NA')) {
+          continue;
+        }
+
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {};
+        }
+
+        if (tree[item.module][item.category][item.caseSet] === undefined) {
+          tree[item.module][item.category][item.caseSet] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category][item.caseSet].caseList.push(item);
+      }
+
+      return tree;
+    },
+    manualToTestTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.offline) {
+        let name = item.status1.name;
+        if (name === 'failed' || name === 'passed') {
+          continue;
+        }
+
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {};
+        }
+
+        if (tree[item.module][item.category][item.caseSet] === undefined) {
+          tree[item.module][item.category][item.caseSet] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category][item.caseSet].caseList.push(item);
+      }
+
+      return tree;
+    },
+    manualFailTree() {
+      let tree = {};
+      if (this.cases == null) return tree;
+      for (let item of this.cases.offline) {
+        let doName = item.status1.doName;
+        if (doName !== 'failed') {
+          continue;
+        }
+
+        if (tree[item.module] === undefined) {
+          tree[item.module] = {};
+        }
+
+        if (tree[item.module][item.category] === undefined) {
+          tree[item.module][item.category] = {};
+        }
+
+        if (tree[item.module][item.category][item.caseSet] === undefined) {
+          tree[item.module][item.category][item.caseSet] = {
+            caseList: []
+          };
+        }
+        tree[item.module][item.category][item.caseSet].caseList.push(item);
+      }
+
+      return tree;
+    },
+    autoTree() {
+      switch (this.autoType) {
+        case 0:
+        case '0':
+          return this.autoAllTree;
+        case 1:
+        case '1':
+          return this.autoToConfirmTree;
+        case 2:
+        case '2':
+          return this.autoFailTree;
+        default:
+          return {};
+      }
+    },
+    manualTree() {
+      switch (this.manualType) {
+        case 0:
+          return this.manualAllTree;
+        case 1:
+          return this.manualToConfirmTree;
+        case 2:
+          return this.manualFailTree;
+        case 3:
+          return this.manualToTestTree;
+        default:
+          return {};
+      }
+    }
+  }
+});
+</script>
+
+<style scoped>
+.chooseLine {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-around;
+}
+.caseCard {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  margin: 8px;
+  padding: 8px;
+  font-size: 0.8rem;
+}
+.topLine {
+  display: flex;
+  justify-content: space-between;
+}
+.bottomLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.info_name {
+  font-weight: bold;
+}
+.radio-group {
+  font-size: 0.8rem;
+}
+.download {
+  margin-right: 0;
+  font-size: 0.6rem;
+}
+.progress {
+  width: 70%;
+}
+
+.error {
+  overflow: scroll;
+  height: 1rem;
+  width: 80%;
+  font-size: 0.6rem;
+  color: rgb(165, 44, 44);
+}
+</style>

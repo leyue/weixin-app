@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "NATS",
+    "component": true,
+    "usingComponents": {
+        "basicInfo": "../components/basicInfo",
+        "modulesTable": "../components/modulesTable",
+        "categoryTable": "../components/categoryTable",
+        "toolTable": "../components/toolTable",
+        "caseTable": "../components/caseTable"
+    }
+}

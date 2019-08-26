@@ -1,0 +1,104 @@
+<template>
+  <div class="main">
+    <basicInfo :app="app"></basicInfo>
+    <modulesTable :modules="app.archive.report.module"></modulesTable>
+    <categoryTable :category="app.archive.report.category"></categoryTable>
+    <toolTable :tools="app.archive.report.tools"></toolTable>
+    <caseTable :cases="app.archive.cases"  :app="app.app"  :_id="app._id"></caseTable>
+  </div>
+</template>
+<script>
+import wepy from '@wepy/core';
+wepy.page({
+  data: {
+    name: 'root',
+    pwd: '123456780',
+    token: '',
+    app: {
+      project: '',
+      type: '',
+      priority: 2,
+      requirement: '',
+      archive: {
+        cases: {
+          online: [],
+          offline: []
+        },
+        report: {
+          module: []
+        }
+      },
+      status: {
+        name: ''
+      },
+      depend: {
+        pac0: ''
+      }
+    },
+    priorities: {
+      0: '最低',
+      1: '低',
+      2: '中等',
+      3: '高',
+      4: '最高',
+      10: '最低 已提升',
+      11: '低 已提升',
+      12: '中等 已提升',
+      13: '高 已提升',
+      14: '最高 已提升'
+    }
+  },
+
+  onLoad(options) {
+    // get token
+    let me = this; // 回調函數中this的指代意義不同
+    wx.request({
+      url: 'http://nats-sh.unisoc.com:30001/app/session',
+      data: {
+        name: this.name,
+        pwd: this.pwd
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      method: 'POST',
+      success(res) {
+        me.token = res.data.token;
+
+        // get information
+        wx.request({
+          url:
+            // 'http://nats-sh.unisoc.com:30001/app/task/SWVPT201906040922313972',
+            'http://nats-sh.unisoc.com:30001/app/task/SWVTT20180727153035bad6',
+          header: {
+            'content-type': 'application/json',
+            Authorization: 'Bearer ' + me.token
+          },
+          method: 'GET',
+          success(res) {
+            me.app = res.data[0];
+            console.log(me.app);
+          }
+        });
+      }
+    });
+  }
+});
+</script>
+<style scoped>
+.main {
+  background: #f9f9f9;
+}
+</style>
+<config>
+{
+    navigationBarTitleText: 'NATS',
+    usingComponents: {
+        basicInfo: '../components/basicInfo',
+        modulesTable: '../components/modulesTable',
+        categoryTable: '../components/categoryTable',
+        toolTable: '../components/toolTable',
+        caseTable: '../components/caseTable'
+    }
+}
+</config>

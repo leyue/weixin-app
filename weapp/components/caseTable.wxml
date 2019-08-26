@@ -1,0 +1,42 @@
+
+<view>
+  <view class="chooseLine">
+    <radio-group bindchange="_proxy" data-model-id="20" class="radio-group">
+      <label wx:for="{{items}}" wx:key="{{items.value}}" class="radio">
+        <radio value="{{item.value}}" checked="{{item.checked}}" color="#4770f7"></radio>
+        {{item.name}}
+      </label>
+    </radio-group>
+  </view>
+  <view wx:for="{{ autoTree }}" wx:for-index="moduleKey" wx:for-item="moduleValue" wx:key="moduleKey" label="{{ moduleKey }}" key="{{ moduleKey }}">
+    <view wx:for="{{ moduleValue }}" wx:for-index="categoryKey" wx:for-item="categoryValue" wx:key="categoryKey" key="{{ categoryKey }}">
+      <view slot="header">
+        <label>{{ categoryKey }}</label>
+      </view>
+      <view wx:for="{{ categoryValue.caseList }}" wx:for-index="index" wx:for-item="caseValue" wx:key="index" key="{{ index }}" class="caseCard">
+        <view>
+          <view class="topLine">
+            <label class="info_name">{{ caseValue.alias }}</label>
+            <view class="case-operate">
+              <label wx:if="{{ caseValue.status1.doName === 'passed' }}">Pass</label>
+              <label wx:if="{{ caseValue.status1.doName === 'failed' }}">Fail</label>
+              <label wx:if="{{ (caseValue.status1.doName === 'passed' || caseValue.status1.doName === 'failed') && caseValue.status1.doName === 'NA' }}">待确认</label>
+            </view>
+          </view>
+          <view class="info_py">{{caseValue.name}}</view>
+          <view wx:if="{{ caseValue.status1.assigned !== '' }}">{{ caseValue.status1.assigned }}</view>
+          <view class="bottomLine">
+            
+            <progress wx:if="{{ caseValue.status1.name === 'passed' }}" percent="100" class="progress"></progress>
+            <view wx:else class="error">{{ caseValue.status1.error}}</view>
+            <button hidden="{{ !(caseValue.log && caseValue.log.upload) }}" data-wpy-evt="12-20" bindtap="_proxy" data-wpytap-a="{{ caseValue }}" class="download">下载Log</button>
+          </view>
+          
+        </view>
+        <view>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

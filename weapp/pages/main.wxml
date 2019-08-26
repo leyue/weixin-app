@@ -1,0 +1,8 @@
+
+<view class="main">
+  <basicInfo bind_init="_initComponent" app="{{ app }}"></basicInfo>
+  <modulesTable bind_init="_initComponent" modules="{{ app.archive.report.module }}"></modulesTable>
+  <categoryTable bind_init="_initComponent" category="{{ app.archive.report.category }}"></categoryTable>
+  <toolTable bind_init="_initComponent" tools="{{ app.archive.report.tools }}"></toolTable>
+  <caseTable bind_init="_initComponent" cases="{{ app.archive.cases }}" app="{{ app.app }}" _id="{{ app._id }}"></caseTable>
+</view>

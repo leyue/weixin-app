@@ -1,0 +1,11 @@
+
+ <view class="table">
+    <view class="tr th">
+        <view class="td">工具名称</view>
+        <view class="td">版本</view>
+    </view>
+    <view wx:for="{{ tools }}" wx:for-index="index" wx:for-item="item" wx:key="index" class="tr">
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.version}}</view>
+    </view>
+</view>

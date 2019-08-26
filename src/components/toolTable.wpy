@@ -1,0 +1,55 @@
+<template>
+     <div class="table">
+        <div class="tr th">
+            <div class="td">工具名称</div>
+            <div class="td">版本</div>
+        </div>
+        <div v-for="item in tools" class="tr">
+            <div class="td">{{item.name}}</div>
+            <div class="td">{{item.version}}</div>
+        </div>
+    </div>
+</template>
+
+<script>
+import wepy from '@wepy/core';
+
+wepy.component({
+  props: {
+      tools: {
+        type: Array,
+        required:true,
+    }
+  },
+
+  onLoad(){
+      console.log(this.modules)
+  }
+})
+
+</script>
+
+<style scoped>
+.table {
+  background: white;
+  font-size: 0.8rem;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  height: 1.2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.th {
+  background: #4770f7;
+  color: #fff;
+}
+
+.td {
+  width: 30%;
+  padding: 5px;
+}
+</style>
+

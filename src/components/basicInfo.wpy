@@ -1,0 +1,84 @@
+<template>
+      <div class="table">
+      <div class="tr even">
+        <label>测试单号</label>
+        <text>{{app.app}}</text>
+      </div>
+      <div class="tr odd">
+        <label>类型</label>
+        <text>{{app.type}}</text>
+      </div>
+      <div class="tr even">
+        <label>描述</label>
+        <text>{{app.requirement}}</text>
+      </div>
+      <div class="tr odd">
+        <label>提交者</label>
+        <text>{{app.committer}}</text>
+      </div>
+      <div class="tr even">
+        <label>优先级</label>
+        <text>{{priorities[app.priority]}}</text>
+      </div>
+      <div class="tr odd">
+        <label>项目</label>
+        <text>{{app.archive.project}}</text>
+      </div>
+      <div class="tr even">
+        <label>HW</label>
+        <text>{{app.archive.hw}}</text>
+      </div>
+      <div class="tr odd">
+        <label>阶段</label>
+        <text>{{app.archive.casePhase}}</text>
+      </div>
+      <div class="tr even">
+        <label>任务</label>
+        <text>{{app.archive.name}}</text>
+      </div>
+      <div class="tr odd">
+        <label>软件版本</label>
+        <text>{{app.depend.pac0}}</text>
+      </div>
+    </div>
+</template>
+<script>
+import wepy from '@wepy/core';
+wepy.component({
+    props: {
+        app: {}
+    }
+
+})
+</script>
+
+<style>
+ .table {
+  /* border: 1px solid darkgray; */
+  font-size: 0.8rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  margin: 8px;
+  padding: 8px;
+
+}
+.tr {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.odd {
+  background: #f9f9f9;
+}
+
+.tr label {
+  width: 30%;
+  padding: 0 5px;
+}
+.tr text {
+  width: 75%;
+  padding: 0 5px;
+  overflow: scroll;
+}
+</style>

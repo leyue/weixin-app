@@ -1,0 +1,30 @@
+
+ <view class="table">
+   <view>
+      <view wx:for="{{ modules }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="line"><view class="label">模块</view><view class="containt">{{item.module}}</view></view>
+      <view class="line"><view class="label">Tester</view><view class="containt">{{item.tester}}</view></view>
+      <view class="line">  <view class="label">Owner</view><view class="containt">{{item.owner}}</view></view>       
+      </view>
+
+   </view>
+    <view class="tr th">
+        
+        <view class="td">状态</view>
+        <view class="td">Total</view>
+        <view class="td">Pass</view>
+        <view class="td">Fail</view>
+        <view class="td">通过率</view>
+        <view class="td">完成率</view>
+    </view>
+    <view wx:for="{{ modules }}" wx:for-index="index" wx:for-item="item" wx:key="index" class="tr">
+        
+        <view class="td">{{item.status}}</view>
+        <view class="td">{{item.submit}}</view>
+        <view class="td">{{item.pass}}</view>
+        <view class="td">{{item.test-item.pass}}</view>  
+        <view class="td">{{item.test? (item.pass/item.test*100)+'%':'0%'}}</view> 
+        <view class="td">{{(item.test/item.submit*100)+'%'}}</view>
+        
+    </view>
+</view>
