@@ -20,7 +20,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __wepy_require(1);
+module.exports = __wepy_require(3);
 
 if (hadRuntime) {
   // Restore the original runtime.

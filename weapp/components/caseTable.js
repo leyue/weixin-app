@@ -406,14 +406,929 @@ _core["default"].component({
       }
     }
   }
-}, {info: {"components":{},"on":{}}, handlers: {'12-20': {"tap": function proxy (caseValue) {
+}, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
     
     var _vm=this;
       return (function () {
         _vm.handleDownloadLog(caseValue, true)
       })();
     
-  }}}, models: {'20': {
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
+      type: "change",
+      expr: "autoType",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.autoType = $v;
+      
+    }
+    }} }, {info: {"components":{},"on":{}}, handlers: {'11-0': {"tap": function proxy (caseValue) {
+    
+    var _vm=this;
+      return (function () {
+        _vm.handleDownloadLog(caseValue, true)
+      })();
+    
+  }}}, models: {'0': {
       type: "change",
       expr: "autoType",
       handler: function set ($v) {

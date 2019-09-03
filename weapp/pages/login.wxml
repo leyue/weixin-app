@@ -1,0 +1,5 @@
+
+<view>
+  <button type="primary" open-type="getUserInfo" lang="zh_CN" data-wpy-evt="5-76" bindgetuserinfo="_proxy" bindtap="_proxy" class="login">授权登录</button>
+</view>
+

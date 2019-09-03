@@ -58,6 +58,7 @@ wepy.app({
 <config>
 {
     pages: [
+      'pages/login',
       'pages/main'
     ],
     window: {

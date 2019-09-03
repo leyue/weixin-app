@@ -1,7 +1,7 @@
 
 <view>
   <view class="chooseLine">
-    <radio-group bindchange="_proxy" data-model-id="20" class="radio-group">
+    <radio-group bindchange="_proxy" data-model-id="0" class="radio-group">
       <label wx:for="{{items}}" wx:key="{{items.value}}" class="radio">
         <radio value="{{item.value}}" checked="{{item.checked}}" color="#4770f7"></radio>
         {{item.name}}
@@ -29,7 +29,7 @@
             
             <progress wx:if="{{ caseValue.status1.name === 'passed' }}" percent="100" class="progress"></progress>
             <view wx:else class="error">{{ caseValue.status1.error}}</view>
-            <button hidden="{{ !(caseValue.log && caseValue.log.upload) }}" data-wpy-evt="12-20" bindtap="_proxy" data-wpytap-a="{{ caseValue }}" class="download">下载Log</button>
+            <button hidden="{{ !(caseValue.log && caseValue.log.upload) }}" data-wpy-evt="11-0" bindtap="_proxy" data-wpytap-a="{{ caseValue }}" class="download">下载Log</button>
           </view>
           
         </view>

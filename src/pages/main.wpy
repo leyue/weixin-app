@@ -4,12 +4,15 @@
     <modulesTable :modules="app.archive.report.module"></modulesTable>
     <categoryTable :category="app.archive.report.category"></categoryTable>
     <toolTable :tools="app.archive.report.tools"></toolTable>
-    <caseTable :cases="app.archive.cases"  :app="app.app"  :_id="app._id"></caseTable>
+    <caseTable :cases="app.archive.cases" :app="app.app" :_id="app._id"></caseTable>
   </div>
 </template>
 <script>
 import wepy from '@wepy/core';
+import store from '../store';
+import { mapState, mapMutations } from '@wepy/x';
 wepy.page({
+  store,
   data: {
     name: 'root',
     pwd: '123456780',
@@ -48,38 +51,26 @@ wepy.page({
       14: '最高 已提升'
     }
   },
+  computed: {
+    ...mapState(['token'])
+  },
+  methods: {
+    ...mapMutations(['setToken'])},
 
   onLoad(options) {
-    // get token
     let me = this; // 回調函數中this的指代意義不同
     wx.request({
-      url: 'http://nats-sh.unisoc.com:30001/app/session',
-      data: {
-        name: this.name,
-        pwd: this.pwd
-      },
+      url:
+        // 'http://nats-sh.unisoc.com:30001/app/task/SWVPT201906040922313972',
+        'http://nats-sh.unisoc.com:30001/app/task/SWVTT20180727153035bad6',
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Authorization: 'Bearer ' + store.state.token
       },
-      method: 'POST',
+      method: 'GET',
       success(res) {
-        me.token = res.data.token;
-
-        // get information
-        wx.request({
-          url:
-            // 'http://nats-sh.unisoc.com:30001/app/task/SWVPT201906040922313972',
-            'http://nats-sh.unisoc.com:30001/app/task/SWVTT20180727153035bad6',
-          header: {
-            'content-type': 'application/json',
-            Authorization: 'Bearer ' + me.token
-          },
-          method: 'GET',
-          success(res) {
-            me.app = res.data[0];
-            console.log(me.app);
-          }
-        });
+        me.app = res.data[0];
+        console.log(me.app);
       }
     });
   }

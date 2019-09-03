@@ -1,0 +1,65 @@
+<template>
+<div>
+  <button class="login" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" @click="Login" >授权登录</button>
+</div>
+
+</template>
+
+<script>
+import wepy from '@wepy/core';
+import store from '../store';
+import { mapState, mapMutations } from '@wepy/x';
+
+wepy.page({
+  store,
+  computed: {
+    ...mapState(['token'])
+  },
+  methods: {
+    ...mapMutations(['setToken']),
+
+    onGotUserInfo: function(e) {
+    console.log(e.$wx.detail.rawData)
+  },
+
+    Login: function() {
+      var me = this;
+      wx.login({
+        success(res) {
+          if (res.code) {
+            //发起网络请求
+            wx.request({
+              url: 'http://nats-sh.unisoc.com:30001/app/session',
+              data: {
+                name: 'root',
+                pwd: '123456780'
+              },
+              header: {
+                'content-type': 'application/json'
+              },
+              method: 'POST',
+              success(res) {
+                store.commit({
+                  type: 'setToken',
+                  token: res.data.token
+                });
+                me.$navigate({url:"main"})
+              }
+            });
+          } else {
+            console.log('登录失败！' + res.errMsg);
+          }
+        }
+      });
+    }
+  }
+});
+</script>
+
+<style>
+.login {
+  margin: 200px auto;
+}
+</style>
+
+
